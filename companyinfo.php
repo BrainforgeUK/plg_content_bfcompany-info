@@ -12,9 +12,15 @@ defined('_JEXEC') or die;
 
 jimport('joomla.plugin.plugin');
 
-class plgContentCompanyInfo extends JPlugin{	
+class plgContentCompanyInfo extends JPlugin{
+  public static $_params = null;
+  
+	public function __construct(&$subject, $config = array())	{
+		parent::__construct($subject, $config);
+    self::$_params = $this->params;
+  }
 
-	public function prepare(&$article){		
+	public static function prepare(&$article){		
 		$matches = array();
 		preg_match_all('/{(companyinfo)\s*(.*?)}/i', $article, $matches, PREG_SET_ORDER);  
 		
@@ -27,14 +33,14 @@ class plgContentCompanyInfo extends JPlugin{
       $module_output = null;
 
       if (count($paramsarray) && $paramsarray[0]) {
-     		$module_output = $this->params->def($paramsarray[0]);
+     		$module_output = self::$_params->def($paramsarray[0]);
       }
       $article = str_replace($match[0], $module_output, $article);
 		} 		
 	}
 
 	public function onContentPrepare($context, &$article, &$params, $limitstart){
-	  $this->prepare($article->text);
+	  self::prepare($article->text);
 	}
 }
 ?>

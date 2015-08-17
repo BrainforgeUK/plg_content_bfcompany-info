@@ -5,9 +5,9 @@
   <author>Jonathan Brain</author>
   <authorEmail>brainforge@btinternet.com</authorEmail>
   <authorUrl>http://www.brainforge.co.uk</authorUrl>
-  <copyright>Copyright 2011 Jonathan Brain. All rights reserved.</copyright>
+  <copyright>Copyright 2011-2015 Jonathan Brain. All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 
 	<description>
 Plugin to display a company information into an article.
