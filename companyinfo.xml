@@ -5,9 +5,9 @@
   <author>Jonathan Brain</author>
   <authorEmail>brainforge@btinternet.com</authorEmail>
   <authorUrl>http://www.brainforge.co.uk</authorUrl>
-  <copyright>Copyright 2011-2015 Jonathan Brain. All rights reserved.</copyright>
+  <copyright>Copyright 2011-2018 Jonathan Brain. All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-  <version>0.0.3</version>
+  <version>4.0.0</version>
 
 	<description>
 Plugin to display a company information into an article.
@@ -72,6 +72,7 @@ Hover over description to see parameter name to include in article.
 					description="Location comment [location]."
 					label="Location Comment"/>					
 				<field name="extra" type="textarea" rows="2" cols="50"
+          filter="raw"
 					description="Extra Info [extra]."
 					label="Extra Information"/>					
 				<field name="extra2" type="textarea" rows="2" cols="50"
@@ -83,4 +84,8 @@ Hover over description to see parameter name to include in article.
 			</fieldset>
 		</fields>
 	</config>	
+
+  <updateservers>
+      <server type="extension" priority="1" name="Content - Company Information">https://brainforge.co.uk/media/com_bfupdater/plg_companyinfo.xml</server>
+  </updateservers>
 </extension>
