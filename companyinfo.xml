@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="1.6" type="plugin" group="content" method="upgrade">
-	<name>Content - Company Information</name>
+	<name>Content - Company Information by BrainforgeUK</name>
   <creationDate>09 January 2011</creationDate>
   <author>Jonathan Brain</author>
   <authorEmail>brainforge@btinternet.com</authorEmail>
@@ -86,6 +86,6 @@ Hover over description to see parameter name to include in article.
 	</config>	
 
   <updateservers>
-      <server type="extension" priority="1" name="Content - Company Information">https://brainforge.co.uk/media/com_bfupdater/plg_companyinfo.xml</server>
+      <server type="extension" priority="1" name="Content - Company Information by BrainforgeUK">https://brainforge.co.uk/media/com_bfupdater/plg_companyinfo.xml</server>
   </updateservers>
 </extension>
