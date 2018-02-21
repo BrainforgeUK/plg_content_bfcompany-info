@@ -87,7 +87,7 @@ Hover over description to see parameter name to include in article.
 
   <updateservers>
       <server type="extension" priority="1" name="Content - Company Information by BrainforgeUK">
-				https://brainforge.co.uk/component/bfupdater?element=plg_content_companyinfo.xml
+				https://brainforge.co.uk/component/bfupdater?element=plg_content_bfcompany-info.xml
 			</server>
   </updateservers>
 </extension>
