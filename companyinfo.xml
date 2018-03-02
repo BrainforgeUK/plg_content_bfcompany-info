@@ -1,93 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="1.6" type="plugin" group="content" method="upgrade">
-	<name>Content - Company Information by BrainforgeUK</name>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_COMPANYINFO</name>
   <creationDate>09 January 2011</creationDate>
   <author>Jonathan Brain</author>
   <authorEmail>brainforge@btinternet.com</authorEmail>
   <authorUrl>http://www.brainforge.co.uk</authorUrl>
   <copyright>Copyright 2011-2018 Jonathan Brain. All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-  <version>4.0.1</version>
+  <version>4.0.3</version>
 
-	<description>
-Plugin to display a company information into an article.
-&lt;br /&gt;
-Don't forget to ENABLE this plugin in the plugin-manager.
-&lt;br /&gt;
-&lt;br /&gt;
-Syntax in editor:
-&lt;ul&gt;
-&lt;li&gt;
-&amp;nbsp;{companyinfo [telephone]}&amp;nbsp;&amp;nbsp;&amp;nbsp;-&amp;nbsp;where 'telephone' is the information to display.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br /&gt;
-Hover over description to see parameter name to include in article.
-	</description> 
+	<description>PLG_CONTENT_COMPANYINFO_XML_DESCRIPTION</description> 
 
 	<files>		
 		<filename plugin="companyinfo">companyinfo.php</filename>		
 	</files>
 
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-				<field name="telephone" type="text" size="40"
-					description="Telephone number [telephone]."
-					label="Telephone"/>					
-				<field name="telephone2" type="text" size="40"
-					description="Telephone number [telephone2]."
-					label="Telephone 2"/>					
-				<field name="mobile" type="text" size="40"
-					description="Mobile number [mobile]."
-					label="Mobile"/>					
-				<field name="mobile2" type="text" size="40"
-					description="Mobile number [mobile2]."
-					label="Mobile 2"/>					
-				<field name="email" type="text" size="50"
-					description="Email address [email]."
-					label="Email"/>					
-				<field name="email2" type="text" size="50"
-					description="Email address [email2]."
-					label="Email 2"/>					
-				<field name="email3" type="text" size="50"
-					description="Email address [email3]."
-					label="Email 3"/>					
-				<field name="email4" type="text" size="50"
-					description="Email address [email4]."
-					label="Email 4"/>					
-				<field name="facebook" type="text" size="50"
-					description="Facebook link [facebook]."
-					label="Facebook Link"/>					
-				<field name="twitter" type="text" size="50"
-					description="Twitter link [twitters]."
-					label="Twitter Link"/>					
-				<field name="vatno" type="text" size="40"
-					description="VAT Number [vatno]."
-					label="VAT Number"/>					
-				<field name="companyno" type="text" size="40"
-					description="Company Registration Number [companyno]."
-					label="Company Reg No"/>					
-				<field name="location" type="textarea" rows="3" cols="50"
-					description="Location comment [location]."
-					label="Location Comment"/>					
-				<field name="extra" type="textarea" rows="2" cols="50"
-          filter="raw"
-					description="Extra Info [extra]."
-					label="Extra Information"/>					
-				<field name="extra2" type="textarea" rows="2" cols="50"
-					description="Extra Info [extra2]."
-					label="Extra Information 2"/>					
-				<field name="extra3" type="textarea" rows="2" cols="50"
-					description="Extra Info [extra3]."
-					label="Extra Information 3"/>					
-			</fieldset>
-		</fields>
-	</config>	
+	<languages folder="administrator/language/en-GB">
+		<language tag="en-GB">en-GB.plg_content_companyinfo.ini</language>
+		<language tag="en-GB">en-GB.plg_content_companyinfo.sys.ini</language>
+	</languages>
 
-  <updateservers>
-      <server type="extension" priority="1" name="Content - Company Information by BrainforgeUK">
-				https://brainforge.co.uk/component/bfupdater?element=plg_content_bfcompany-info.xml
-			</server>
-  </updateservers>
+  <config>
+    <fields name="params">
+    	<fieldset name="basic">
+    		<field name="telephone" type="text" size="40"
+    			description="PLG_CONTENT_COMPANYINFO_TELNO_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_TELNO_LABEL"/>					
+    		<field name="telephone2" type="text" size="40"
+    			description="PLG_CONTENT_COMPANYINFO_TELNO2_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_TELNO2_LABEL"/>					
+    		<field name="mobile" type="text" size="40"
+    			description="PLG_CONTENT_COMPANYINFO_MOBILE_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_MOBILE_LABEL"/>					
+    		<field name="mobile2" type="text" size="40"
+    			description="PLG_CONTENT_COMPANYINFO_MOBILE2_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_MOBILE2_LABEL"/>					
+    		<field name="email" type="text" size="50"
+    			description="PLG_CONTENT_COMPANYINFO_EMAIL_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EMAIL_LABEL"/>					
+    		<field name="email2" type="text" size="50"
+    			description="PLG_CONTENT_COMPANYINFO_EMAIL2_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EMAIL2_LABEL"/>					
+    		<field name="email3" type="text" size="50"
+    			description="PLG_CONTENT_COMPANYINFO_EMAIL3_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EMAIL3_LABEL"/>					
+    		<field name="email4" type="text" size="50"
+    			description="PLG_CONTENT_COMPANYINFO_EMAIL4_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EMAIL4_LABEL"/>					
+    		<field name="facebook" type="text" size="50"
+    			description="PLG_CONTENT_COMPANYINFO_FACEBOOK_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_FACEBOOK_LABEL"/>					
+    		<field name="twitter" type="text" size="50"
+    			description="PLG_CONTENT_COMPANYINFO_TWITTER_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_TWITTER_LABEL"/>					
+    		<field name="vatno" type="text" size="40"
+    			description="PLG_CONTENT_COMPANYINFO_VATNO_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_VATNO_LABEL"/>					
+    		<field name="companyno" type="text" size="40"
+    			description="PLG_CONTENT_COMPANYINFO_COMPANYNO_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_COMPANYNO_LABEL"/>					
+    		<field name="location" type="textarea" rows="3" cols="50"
+          filter="raw"
+    			description="PLG_CONTENT_COMPANYINFO_LOCATION_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_LOCATION_LABEL"/>					
+    		<field name="extra" type="textarea" rows="2" cols="50"
+          filter="raw"
+    			description="PLG_CONTENT_COMPANYINFO_EXTRA_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EXTRA_LABEL"/>					
+    		<field name="extra2" type="textarea" rows="2" cols="50"
+          filter="raw"
+    			description="PLG_CONTENT_COMPANYINFO_EXTRA2_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EXTRA2_LABEL"/>					
+    		<field name="extra3" type="textarea" rows="2" cols="50"
+          filter="raw"
+    			description="PLG_CONTENT_COMPANYINFO_EXTRA3_DESC"
+    			label="PLG_CONTENT_COMPANYINFO_EXTRA3_LABEL"/>					
+    	</fieldset>
+    </fields>
+  </config>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Content - Company Information by BrainforgeUK">
+			https://brainforge.co.uk/component/bfupdater?element=plg_content_bfcompany-info.xml
+		</server>
+	</updateservers>
 </extension>
