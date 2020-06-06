@@ -2,7 +2,7 @@
 /**
 * @package plugin load company information into article
 * @version 1.0.0
-* @copyright Copyright (C) 2011-2018 Jonathan Brain. All rights reserved.
+* @copyright Copyright (C) 2011-2020 Jonathan Brain. All rights reserved.
 * @license GPL
 * @author http://www.brainforge.co.uk
 */
@@ -14,22 +14,22 @@ jimport('joomla.plugin.plugin');
 
 class plgContentCompanyInfo extends JPlugin{
   public static $_params = null;
-  
+
 	public function __construct(&$subject, $config = array())	{
 		parent::__construct($subject, $config);
     self::$_params = $this->params;
   }
 
-	public static function prepare(&$article){		
+	public static function prepare(&$article){
 		$matches = array();
-		preg_match_all('/{(companyinfo)\s*(.*?)}/i', $article, $matches, PREG_SET_ORDER);  
-		
-		foreach ($matches as $match){   		
+		preg_match_all('/{(companyinfo)\s*(.*?)}/i', $article, $matches, PREG_SET_ORDER);
+
+		foreach ($matches as $match){
 			$module = '';
 			$arguments = array();
 			$module = preg_replace("/\[|]/", '', $match[2]);
 			$paramsarray = explode('|',$module);
-			
+
       $module_output = null;
 
       if (!empty($paramsarray[0])) {
@@ -58,16 +58,16 @@ class plgContentCompanyInfo extends JPlugin{
                 case 'email2':
                 case 'email3':
                 case 'email4':
-                  $module_output = '<a href="mailto::' . preg_replace('/[^+0-9]/', '', $module_output) . '">' . $text . '</a>'; 
+                  $module_output = '<a href="mailto:' . $module_output . '">' . $text . '</a>';
                   break;
                 case 'telephone':
                 case 'telephone2':
                 case 'mobile':
                 case 'mobile2':
-                  $module_output = '<a href="tel::' . preg_replace('/[^+0-9]/', '', $module_output) . '">' . $text . '</a>'; 
+                  $module_output = '<a href="tel:' . preg_replace('/[^+0-9]/', '', $module_output) . '">' . $text . '</a>';
                   break;
                 case 'companyno':
-                  $module_output = '<a href="https://beta.companieshouse.gov.uk/company/' . str_pad(preg_replace('/[^0-9]/', '', $module_output), 8, '0', STR_PAD_LEFT) . '">' . $text . '</a>'; 
+                  $module_output = '<a href="https://beta.companieshouse.gov.uk/company/' . str_pad(preg_replace('/[^0-9]/', '', $module_output), 8, '0', STR_PAD_LEFT) . '">' . $text . '</a>';
                   break;
               }
               break;
@@ -75,7 +75,7 @@ class plgContentCompanyInfo extends JPlugin{
         }
       }
       $article = str_replace($match[0], $module_output, $article);
-		} 		
+		}
 	}
 
 	public function onContentPrepare($context, &$article, &$params, $limitstart){
